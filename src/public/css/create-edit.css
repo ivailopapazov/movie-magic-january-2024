@@ -1,0 +1,56 @@
+.createSection,
+.editSection {
+  background-color: #b5838d;
+  margin: auto;
+  width: 740px;
+  height: 950px;
+  margin-top: 1rem;
+  left: 35%;
+  text-align: center;
+  display: flex;
+  color: black;
+  font-weight: bold;
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+.noBullet textarea {
+  resize: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.createForm,
+.editForm {
+  width: 720px;
+  padding: 10px 0;
+  transition: 0.2s;
+}
+
+.createForm > h2,
+.editForm > h2 {
+  font-weight: bold;
+  font-size: 27px;
+  margin-bottom: 0.8em;
+}
+
+#create-btn,
+#edit-btn {
+  border: 1px solid black;
+  background: #6d6875;
+  font-size: 18px;
+  color: white;
+  margin-top: 20px;
+  padding: 10px 43px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#create-btn:hover,
+#edit-btn:hover {
+  background: rgba(20, 20, 20, 0.8);
+  padding: 10px 80px;
+}

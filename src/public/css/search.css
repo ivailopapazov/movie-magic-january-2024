@@ -1,0 +1,88 @@
+#search {
+  display: block;
+  justify-content: space-around;
+  align-items: center;
+  bottom: 0;
+  margin-top: 1em;
+  margin-left: 0%;
+  margin-right: 0%;
+  min-height: 150px;
+  font-size: 20px;
+  width: 100%;
+}
+
+#search > h1 {
+  font-size: 2.4rem;
+  position: relative;
+  font-weight: 700;
+  line-height: 1.1;
+  padding: 0;
+  letter-spacing: 0px;
+  color: black;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 4.5rem;
+  margin-bottom: 0.4em;
+  font-family: Ubuntu, sans-serif !important;
+}
+
+form label {
+  color: white;
+  padding: 12px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+input[type=text],
+input[type=number],
+select,
+textarea {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid black;
+  box-sizing: border-box;
+  padding: 12px 20px 12px 12px;
+  border-radius: 0 4px 4px 4px;
+  margin: 8px 0 2em;
+}
+
+input.year {
+  width: 10%;
+}
+
+input.search {
+  width: 20%;
+}
+
+input.genre {
+  width: 20%;
+}
+
+input[type=submit] {
+  background-color: #545775;
+  border: none;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  width: 15%;
+  margin: 5px;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 4px;
+  letter-spacing: 2px;
+  border: 1px solid black;
+}
+
+input[type=submit]:hover {
+  background-color: #718F94;
+  cursor: pointer;
+}
+
+#search .form {
+  border-radius: 5px;
+  padding: 20px;
+  width: 70%;
+  margin-left: 25%;
+}

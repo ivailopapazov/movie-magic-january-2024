@@ -1,0 +1,59 @@
+.full-screen {
+  background-color: #6d6875;
+  width: 98%;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 530px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0px 81px #5b848a;
+}
+
+.about {
+  padding-top: 2em;
+  padding: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+.about .contact-img img {
+  width: 500px;
+}
+
+.about-contact {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.about-contact #first, #second {
+    width: 300px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.about-contact h1 {
+    font-size: 50px;
+    margin-top: 50px;
+    color: black;
+    font-style: italic;
+}
+
+.about-contact p {
+    font-size: 25px;
+    padding: 5px;
+}
+
+.about-contact #address, #contacts {
+  margin-top: 20px;
+}
+
+.about .about-contact > p > a:hover {
+  color: lightgray;
+}
+
+.about {
+  margin-top: 3em;
+}
