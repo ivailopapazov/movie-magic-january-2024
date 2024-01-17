@@ -3,22 +3,23 @@
     <div class="band">
 
         {{#each movies}}
-            <div class="flip flip-vertical">
-                <div class="front">
-                    <img src="{{imageUrl}}" alt="{{title}}">
-                </div>
-                <div class="back">
-                    <h1>{{title}}</h1>
-                    <h2>Genre: {{genre}}</h2>
-                    <p>Description: {{description}}</p>
-                    <a href="#" class="details">Details</a>
-                </div>
+        <div class="flip flip-vertical">
+            <div class="front">
+                <img src="{{imageUrl}}" alt="{{title}}">
             </div>
+            <div class="back">
+                <h1>{{title}}</h1>
+                <h2>Genre: {{genre}}</h2>
+                <p>Description: {{description}}</p>
+                <a href="#" class="details">Details</a>
+            </div>
+        </div>
+        {{else}}
+        <div class="no-posts">
+            <p class="no-offer">There are no posts yet...</p>
+        </div>
         {{/each}}
 
-        <!-- If there are still no posts in the database display: -->
-        <!-- <div class="no-posts">
-                        <p class="no-offer">There are no posts yet...</p>
-                    </div> -->
+
     </div>
 </section>
