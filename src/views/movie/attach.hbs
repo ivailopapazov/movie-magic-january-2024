@@ -8,11 +8,9 @@
                 <label for="cast">Cast</label>
                 <select id="cast" name="cast">
                     <option value="none" selected>--------</option>
-                    <option value="Cast 1">Cast 1</option>
-                    <option value="Cast 2">Cast 2</option>
-                    <option value="Cast 3">Cast 3</option>
-                    <option value="Cast 4">Cast 4</option>
-                    <option value="Cast 5">Cast 5</option>
+                    {{#each casts}}
+                        <option value="{{_id}}">{{name}}</option>
+                    {{/each}}
                 </select>
                 <div id="center-btn">
                     <button id="create-btn">Add Cast</button>
