@@ -1,8 +1,7 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('../lib/jwt');
-
-const SECRET = 'ad89fnkj4nifkasd89f34uj4naw534289u74';
+const { SECRET } = require('../config/config');
 
 // TIODO: Check if user exists
 exports.register = (userData) => User.create(userData);
@@ -29,7 +28,7 @@ exports.login = async (email, password) => {
     };
 
     const token = await jwt.sign(payload, SECRET, { expiresIn: '2h' });
-    
+
     // return token
     return token;
 }

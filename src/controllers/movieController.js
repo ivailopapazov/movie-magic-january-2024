@@ -2,23 +2,7 @@ const router = require('express').Router();
 
 const movieService = require('../services/movieService');
 const castService = require('../services/castService');
-
-router.get('/create', (req, res) => {
-    res.render('create');
-});
-
-router.post('/create', async (req, res) => {
-    const newMovie = req.body;
-
-    try {
-        await movieService.create(newMovie);
-
-        res.redirect('/');
-    } catch (err) {
-        console.log(err.message);
-        res.redirect('/create');
-    }
-});
+const { isAuth } = require('../middlewares/authMiddleware');
 
 router.get('/movies/:movieId', async (req, res) => {
     const movieId = req.params.movieId;
@@ -31,14 +15,31 @@ router.get('/movies/:movieId', async (req, res) => {
     res.render('details', { movie });
 });
 
-router.get('/movies/:movieId/attach', async (req, res) => {
+router.get('/create', isAuth, (req, res) => {
+    res.render('create');
+});
+
+router.post('/create', isAuth, async (req, res) => {
+    const newMovie = req.body;
+
+    try {
+        await movieService.create(newMovie);
+
+        res.redirect('/');
+    } catch (err) {
+        console.log(err.message);
+        res.redirect('/create');
+    }
+});
+
+router.get('/movies/:movieId/attach', isAuth, async (req, res) => {
     const movie = await movieService.getOne(req.params.movieId).lean();
     const casts = await castService.getAll().lean();
     // TODO: remove already added casts
     res.render('movie/attach', { ...movie, casts });
 });
 
-router.post('/movies/:movieId/attach', async (req, res) => {
+router.post('/movies/:movieId/attach', isAuth, async (req, res) => {
     const castId = req.body.cast;
     const movieId = req.params.movieId;
 
@@ -47,7 +48,7 @@ router.post('/movies/:movieId/attach', async (req, res) => {
     res.redirect(`/movies/${movieId}/attach`);
 });
 
-router.get('/movies/:movieId/edit', async (req, res) => {
+router.get('/movies/:movieId/edit', isAuth, async (req, res) => {
     const movie = await movieService.getOne(req.params.movieId).lean();
 
     res.render('movie/edit', { movie });
