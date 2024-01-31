@@ -37,6 +37,19 @@ input[type=number]::-webkit-outer-spin-button {
   margin-bottom: 0.8em;
 }
 
+.info-edit {
+  width: 250px;
+  background: #6D6875;
+  padding: 55px 5px;
+  border-right: 5px solid black;
+}
+
+.info-edit>h2 {
+  padding-top: 150%;
+  font-weight: bold;
+  font-size: 23px;
+}
+
 #create-btn,
 #edit-btn {
   border: 1px solid black;
@@ -53,4 +66,31 @@ input[type=number]::-webkit-outer-spin-button {
 #edit-btn:hover {
   background: rgba(20, 20, 20, 0.8);
   padding: 10px 80px;
+}
+
+.details-btn {
+  margin-left: 20%;
+}
+
+#edit-button, #delete-button {
+  border: 1px solid black;
+  background: #b5838d;
+  font-size: 18px;
+  margin-top: 20px;
+  color: white;
+  padding: 10px 43px;
+  cursor: pointer;
+  transition: 0.4s;
+  margin-right: 50px;
+  font-weight: bold;
+}
+
+#edit-button:hover, #delete-button:hover {
+  background: rgba(20, 20, 20, 0.8);
+  padding: 10px 80px;
+}
+
+.no-cast {
+  font-size: 30px;
+  font-weight: bold;
 }
