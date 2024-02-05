@@ -3,8 +3,14 @@ const bcrypt = require('bcrypt');
 const jwt = require('../lib/jwt');
 const { SECRET } = require('../config/config');
 
-// TIODO: Check if user exists
-exports.register = (userData) => User.create(userData);
+exports.register = (userData) => {
+    const user = User.findOne({ email: userData.email });
+    if (user) {
+        throw new Error('Email already exists');
+    }
+
+    return User.create(userData);
+}
 
 exports.login = async (email, password) => {
     // Get user from db
